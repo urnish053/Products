@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Products</string>
+    <string name="error_no_record">No Record Found</string>
+    <string name="no_internet">No Internet Available</string>
+    <string name="add_product">Add Product</string>
+
+    <string name="camera_permission_deny">Camera permission denied</string>
+    <string name="required_permission_deny">Required permission denied</string>
+    <string name="max_image">Maximum 5 image can be selected</string>
+
+    <string name="err_select_image">Please select atleast One image</string>
+    <string name="err_title">Please enter product title</string>
+    <string name="err_desc">Please enter product description</string>
+    <string name="err_price">Please enter product price</string>
+    <string name="err_discount">Please enter product discount</string>
+
+    <string name="images">Images</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="price">Price</string>
+    <string name="discount">Discount</string>
+    <string name="add">ADD</string>
+    <string name="select_option">Select Option</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+
+    <string name="product_add_success">Product Added Successfully</string>
+
+</resources>

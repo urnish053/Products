@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/root_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/layout_toolbar"
+            android:theme="@style/ToolbarTheme"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <TextView
+                android:id="@+id/txtToolbarTitle"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/extra_large"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/root_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.cardview.widget.CardView
+            app:cardUseCompatPadding="true"
+            android:layout_margin="@dimen/size_fifteen"
+            android:elevation="@dimen/size_ten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_marginStart="@dimen/size_ten"
+                android:layout_marginEnd="@dimen/size_ten"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginTop="@dimen/size_ten"
+                    android:text="@string/images"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/large"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_selected_image"
+                    android:layout_marginTop="@dimen/size_ten"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginTop="@dimen/size_ten"
+                    android:text="@string/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/large"
+                    android:textStyle="bold" />
+
+
+                <EditText
+                    android:layout_marginTop="@dimen/size_five"
+                    android:id="@+id/edt_product_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_textview_empty_black"
+                    android:gravity="start"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:paddingStart="@dimen/size_five"
+                    android:paddingEnd="@dimen/size_five"
+                    android:paddingTop="@dimen/size_ten"
+                    android:paddingBottom="@dimen/size_ten"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/large" />
+
+                <TextView
+                    android:layout_marginTop="@dimen/size_ten"
+                    android:text="@string/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/large"
+                    android:textStyle="bold" />
+                <EditText
+                    android:lines="4"
+                    android:layout_marginTop="@dimen/size_five"
+                    android:id="@+id/edt_product_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_textview_empty_black"
+                    android:gravity="start"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine"
+                    android:paddingStart="@dimen/size_five"
+                    android:paddingEnd="@dimen/size_five"
+                    android:paddingTop="@dimen/size_ten"
+                    android:paddingBottom="@dimen/size_ten"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/large" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginTop="@dimen/size_ten"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:orientation="vertical"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="@string/price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/large"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:layout_marginTop="@dimen/size_five"
+                            android:id="@+id/edt_product_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_textview_empty_black"
+                            android:gravity="start"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:digits="1234567890"
+                            android:maxLength="8"
+                            android:paddingStart="@dimen/size_five"
+                            android:paddingEnd="@dimen/size_five"
+                            android:paddingTop="@dimen/size_ten"
+                            android:paddingBottom="@dimen/size_ten"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/large" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_marginStart="@dimen/size_ten"
+                        android:orientation="vertical"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="@string/discount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/large"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:layout_marginTop="@dimen/size_five"
+                            android:id="@+id/edt_product_discount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_textview_empty_black"
+                            android:gravity="start"
+                            android:imeOptions="actionDone"
+                            android:inputType="numberDecimal"
+                            android:maxLength="10"
+                            android:paddingStart="@dimen/size_five"
+                            android:paddingEnd="@dimen/size_five"
+                            android:paddingTop="@dimen/size_ten"
+                            android:paddingBottom="@dimen/size_ten"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/large" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:background="@drawable/bg_textview_fill_black"
+                    android:layout_marginBottom="@dimen/size_twenty"
+                    android:padding="@dimen/size_ten"
+                    android:gravity="center"
+                    android:id="@+id/txt_add_product"
+                    android:layout_marginTop="@dimen/size_twenty"
+                    android:text="@string/add"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/large"
+                    android:textStyle="bold" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
